@@ -1017,9 +1017,10 @@ rule generate_bigwigs:
         {{
             mkdir -p "{params.dir_bigwig}"
             genome_size=$(bowtie2-inspect --summary "{bowtie2_index}" |
-                          grep "dna:chromosome" |
+                          grep "chr" |
                           cut -f 3 |
-                          awk '{{s+=$1}} END {{print s}}')
+                          awk '{{s+=$1}} END {{print s}}' |
+                          awk '{{printf "%.0f", $1}}')
             mask_size=$(bedtools merge -i "{mask}" | awk '{{s+=$3-$2}} END {{print s}}')
             effective_genome_size=$((genome_size - mask_size))
             echo "Bowtie 2 genome size (chromosomes only): $genome_size"
