@@ -30,8 +30,8 @@ mask:
     hg38: "assets/blacklist_hg38.bed"
 # Bowtie2 indexes for aligning DNA reads
 bowtie2_index:
-    mm10: "assets/index_mm10/mm10"
-    hg38: "assets/index_hg38/GRCh38_noalt_as"
+    mm10: "/home/jovyan/resources/bowtie2_indices/mm10/mm10"
+    hg38: "/home/jovyan/resources/bowtie2_indices/hg38/hg38"
 # Generate BAM files for individual targets
 generate_splitbams: true
 min_oligos: 2
