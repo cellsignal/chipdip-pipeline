@@ -14,7 +14,7 @@ output_dir: ""
 temp_dir: "/central/scratch/"
 # Conda environment: either a path to a conda environment YAML file (".yml" or ".yaml")
 # or the name of an existing conda environment
-conda_env: "envs/chipdip.yaml"
+conda_env: "chipdip"
 # Currently "mm10" and "hg38" available
 assembly: "mm10"
 # Number of rounds of tags used, including DPM
